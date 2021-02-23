@@ -17,7 +17,6 @@ python ms2h.py wild.sim.15k
 python ../geno2ihh.py example_012_geno example_gene.index example.gene.hap.ehh 0.05 20
 
 ################ convert vcf to fq #############
-# bcftools view --targets GWHACDY00000001:1-1000000 chr01.all.filter.vcf.gz -O z -o example.chr01.1-1000000.vcf.gz
 
-perl vcf2fq.1.pl example.chr01.1-1000000.vcf.gz SRR1533153 > chr01.SRR1533153.fq  # creat genome in fq format from single individual 
-perl vcf2fq.2.pl example.chr01.1-1000000.vcf.gz SRR1533153 SRR1533197 > chr01.SRR1533153_SRR1533197.fq # creat pseudo-diploid genome in fq format from 2 individuals
+perl ../vcf2fq.1.pl example.vcf SRR1533153 > SRR1533153.fq  
+perl ../vcf2fq.2.pl example.vcf SRR1533153 SRR1533197 > SRR1533153_SRR1533197.fq 
